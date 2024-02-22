@@ -1,0 +1,121 @@
+{
+  "thread": {
+    "prefix": "thread",
+    "body": [
+      "_ = thread::spawn(move || {",
+      "\t$1",
+      "});",
+    ],
+    "description": "thread"
+  },
+  "task": {
+    "prefix": "task",
+    "body": [
+      "_ = tokio::task::spawn(async {",
+      "\t$1",
+      "});",
+    ],
+    "description": "task"
+  },
+  "asyncfnprivate": {
+    "prefix": "asyncfn",
+    "body": [
+      "async fn $1() -> $2 {",
+      "\t$3",
+      "}",
+    ],
+    "description": "async function"
+  },
+  "asyncfn": {
+    "prefix": "asyncfn",
+    "body": [
+      "pub async fn $1() -> $2 {",
+      "\t$3",
+      "}",
+    ],
+    "description": "async function"
+  },
+  "prnt": {
+    "prefix": "prnt",
+    "body": [
+      "println!(\"$1\", $2);",
+    ],
+    "description": "println!"
+  },
+  "eprnt": {
+    "prefix": "eprnt",
+    "body": [
+      "eprintln!(\"$1\", $2);",
+    ],
+    "description": "eprintln!"
+  },
+  "li": {
+    "prefix": "li",
+    "body": [
+      "log::info!(\"$1\", $2);",
+    ],
+    "description": "log::info!"
+  },
+  "le": {
+    "prefix": "le",
+    "body": [
+      "log::error!(\"$1\", $2);",
+    ],
+    "description": "log::error!"
+  },
+  "ld": {
+    "prefix": "ld",
+    "body": [
+      "log::debug!(\"$1\", $2);",
+    ],
+    "description": "log::debug!"
+  },
+  "lw": {
+    "prefix": "lw",
+    "body": [
+      "log::warn!(\"$1\", $2);",
+    ],
+    "description": "log::warn!"
+  },
+  "start": {
+    "prefix": "start",
+    "body": [
+      "let start = std::time::Instant::now();",
+    ],
+    "description": "start"
+  },
+  "elapsed": {
+    "prefix": "elapsed",
+    "body": [
+      "start.elapsed()",
+    ],
+    "description": "elapsed"
+  },
+  "ifletsome": {
+    "prefix": "ifletsome",
+    "body": [
+      "if let Some($1) = $2 {",
+      "\t$3",
+      "}",
+    ],
+    "description": "if let Some"
+  },
+  "ifletok": {
+    "prefix": "ifletok",
+    "body": [
+      "if let Ok($1) = $2 {",
+      "\t$3",
+      "}",
+    ],
+    "description": "if let Ok"
+  },
+  "ifleterr": {
+    "prefix": "ifleterr",
+    "body": [
+      "if let Err(err) = $1 {",
+      "\t$2",
+      "}",
+    ],
+    "description": "if let Err"
+  },
+}
